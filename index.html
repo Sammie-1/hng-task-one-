@@ -1,26 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HNG task-one</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="profile-card">
+      <div class="circle">
+        <img
+          class="profile-img"
+          src="images/IMG-20230831-WA0114.jpg"
+          alt="Oyegbami Samuel"
+          data-testid="slackDisplayImage"
+        />
+      </div>
+      <div class="big-div">
+        <div class="column">
+          <!-- Content for the first column -->
+          <h2 class="size-small">Name</h2>
+          <h2 class="size-small">Track</h2>
+          <h2 class="size-small">Current day of the week</h2>
+          <h2 class="size-small">Current UTC time in Milliseconds</h2>
+        </div>
+        <div class="column">
+          <!-- Content for the second column -->
+          <p class="size-small" data-testid="slackUserName">
+            Oyegbami Samuel Ifeoluwa
+          </p>
+          <p class="size-small" data-testid="myTrack">Frontend</p>
+          <p class="size-small" data-testid="currentDayOfTheWeek"></p>
+          <p class="size-small" data-testid="currentUTCTime"></p>
+        </div>
+      </div>
+      <div class="btn-container">
+        <button class="btn" data-testid="githubURL">
+          <a href="https://github.com/Sammie-1/hng-task-one-" target="_blank"
+            >GitHub URL</a
+          >
+        </button>
+      </div>
+    </section>
 
-  <h1 data-testid="slackUserName">Oyegbami Samuel Ifeoluwa</h1>
-  <img src="images/IMG-20230831-WA0114.jpg" alt="Oyegbami Samuel" data-testid="slackDisplayImage">
-  
-  <p data-testid="currentDayOfTheWeek"></p>
-  <p data-testid="currentUTCTime"></p>
-  
-  <p data-testid="myTrack">Frontend</p>
-  
-  <p>
-    GitHub URL:
-    <a href="https://github.com/Sammie-1/hng-task-one-" data-testid="githubURL">GitHub</a>
-  </p>
-
-  <script src="index.js"></script>
-</body>
+    <script src="index.js"></script>
+  </body>
 </html>

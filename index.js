@@ -1,3 +1,5 @@
+/* es-version :es9*/
+
 
 const currentDate = new Date();
 const currentDayOfWeek = currentDate.getUTCDay();
@@ -17,13 +19,13 @@ setInterval(() => {
   const currentDate = new Date();
   const currentUTCHours = currentDate.getUTCHours();
   const currentUTCMinutes = currentDate.getUTCMinutes();
-  const currentUTCSeconds = currentDate.getUTCSeconds();
+  const currentUTCSeconds = currentDate.getTime();
   const formattedTime = `${formatTimeUnit(currentUTCHours)}:${formatTimeUnit(currentUTCMinutes)}:${formatTimeUnit(currentUTCSeconds)}`;
   const utcTime = document.querySelector('[data-testid="currentUTCTime"]');
-  utcTime.textContent = `Current UTC Time: ${formattedTime}`;
+  utcTime.textContent = `${currentUTCSeconds}`;
  }, 1000);
 
-const dayOfWeekText = `Today is ${daysOfWeek[currentDayOfWeek]}`;
+const dayOfWeekText = `${daysOfWeek[currentDayOfWeek]}`;
  
 // dayOfTheWeek = dayOfTheWeek;
 
