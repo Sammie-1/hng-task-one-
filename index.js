@@ -27,13 +27,8 @@ setInterval(() => {
 
 const dayOfWeekText = `${daysOfWeek[currentDayOfWeek]}`;
  
-// dayOfTheWeek = dayOfTheWeek;
 
 const weekDay = document.querySelector('[data-testid="currentDayOfTheWeek"]');
 
 weekDay.textContent = dayOfWeekText;
 
-
-
-
-// document.getElementById('utcTIme').textContent = utcTimeText; 
