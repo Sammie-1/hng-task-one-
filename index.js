@@ -1,34 +1,26 @@
-/* es-version :es9*/
+function updateDateTime() {
+  const daysOfWeek = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  const currentDate = new Date();
+  const dayOfWeek = daysOfWeek[currentDate.getUTCDay()];
+  const utcTime = currentDate.toUTCString().split(" ")[4]; // Get UTC time
 
-
-const currentDate = new Date();
-const currentDayOfWeek = currentDate.getUTCDay();
-
-
-const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-
-
-function formatTimeUnit(unit) {
-  return unit < 10 ? `0${unit}` : unit;
+  // Update the elements with data-testid attributes
+  document.querySelector('[data-testid="currentDayOfTheWeek"]').textContent =
+    dayOfWeek;
+  document.querySelector('[data-testid="currentUTCTime"]').textContent =
+    utcTime;
 }
 
-// const formattedTime = `${formatTimeUnit(currentUTCHours)}:${formatTimeUnit(currentUTCMinutes)}:${formatTimeUnit(currentUTCSeconds)}`;
+// Initial call to updateDateTime function
+updateDateTime();
 
-
-setInterval(() => {
-  const currentDate = new Date();
-  const currentUTCHours = currentDate.getUTCHours();
-  const currentUTCMinutes = currentDate.getUTCMinutes();
-  const currentUTCSeconds = currentDate.getTime();
-  const formattedTime = `${formatTimeUnit(currentUTCHours)}:${formatTimeUnit(currentUTCMinutes)}:${formatTimeUnit(currentUTCSeconds)}`;
-  const utcTime = document.querySelector('[data-testid="currentUTCTime"]');
-  utcTime.textContent = `${currentUTCSeconds}`;
- }, 1000);
-
-const dayOfWeekText = `${daysOfWeek[currentDayOfWeek]}`;
- 
-
-const weekDay = document.querySelector('[data-testid="currentDayOfTheWeek"]');
-
-weekDay.textContent = dayOfWeekText;
-
+// Update time every minute
+setInterval(updateDateTime, 1000); // Update every 1 seconds
